@@ -7,6 +7,8 @@
   var navClose    = document.getElementById('navClose');
   var navOverlay  = document.getElementById('navOverlay');
   var fullpage    = document.getElementById('fullpage');
+  var scrollbar   = document.getElementById('scrollbar');
+  var drag        = document.getElementById('scrollbarDrag');
 
   /* —— NAV —— */
   function openNav() {
@@ -27,17 +29,30 @@
     if (e.key === 'Escape') closeNav();
   });
 
-  /* —— FULLPAGE HEADER COLOR (home) —— */
+  /* —— FULLPAGE: header color + scrollbar lateral (home) —— */
   if (fullpage && header) {
     var slides = Array.from(fullpage.querySelectorAll('.slide'));
+    var total  = slides.length;
 
     function updateHeader() {
       var idx = Math.round(fullpage.scrollTop / fullpage.clientHeight);
       var slide = slides[idx];
       if (slide && slide.classList.contains('header-white')) {
         header.classList.add('is-white');
+        if (menuBtn) menuBtn.classList.add('is-white');
       } else {
         header.classList.remove('is-white');
+        if (menuBtn) menuBtn.classList.remove('is-white');
+      }
+
+      /* scrollbar drag height & position */
+      if (drag && total > 1) {
+        var pct      = (idx / (total - 1));
+        var barH     = scrollbar ? scrollbar.clientHeight : window.innerHeight;
+        var dragH    = Math.round(barH / total);
+        var dragTop  = Math.round(pct * (barH - dragH));
+        drag.style.height     = dragH + 'px';
+        drag.style.marginTop  = dragTop + 'px';
       }
     }
 

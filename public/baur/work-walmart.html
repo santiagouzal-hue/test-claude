@@ -7,15 +7,15 @@
   <meta name="description" content="Somos un estudio especializado en el desarrollo de comunicaciones de alto rendimiento.">
   <meta name="theme-color" content="#000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-inner">
 
   <!-- HEADER -->
   <header class="header" id="header">
     <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="Baur">
+      <a href="index.html" class="header_logo" aria-label="Baur">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 44">
           <path d="M21.47,44.52A27.65,27.65,0,0,1,10.79,42l-.79,2H.05V37.52H3.33V6.72H0V0H11.05V19c1.66-.87,6.77-3.18,10.68-3.18,5.26,0,8.39,2.72,8.39,14.3S26.73,44.52,21.47,44.52ZM18.29,22.46a23,23,0,0,0-7.24,1.62V37a29.29,29.29,0,0,0,7.24,1.15c2.76,0,4-1.62,4-7.93S21.15,22.46,18.29,22.46Z"/>
           <path d="M51.22,44.06l-.78-2.84c-1.88,1-6.25,3.24-11,3.24-3.75,0-6.93-2.37-6.93-8.91,0-2.67.42-5.56,2.25-6.72C37.31,27.27,42.21,27,50.18,27V24.66C50.18,22,49.5,21,46.11,21a26.26,26.26,0,0,0-4.48.4v3.3H34.29v-8a63.2,63.2,0,0,1,11.88-1.21c8.8,0,11.72,2.66,11.72,9.14V37.52H61v6.54Zm-1-12.51c-4.53,0-7.35.18-8.81.76-.94.34-1.14,1.44-1.14,3.06,0,2.61.93,3.3,3,3.3a24.76,24.76,0,0,0,7-1.56Z"/>
@@ -24,18 +24,19 @@
         </svg>
       </a>
       <div class="header-right">
-        <a href="en/work-walmart.html" class="lang-link">english</a>
-        <button class="hamburger" id="menuBtn" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="en/work-walmart.html" class="content-lang">english</a>
       </div>
     </div>
   </header>
 
+  <button class="rmenu-btn" id="menuBtn" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
   <!-- NAV -->
-  <div class="nav-overlay" id="navOverlay"></div>
-  <nav class="main-nav" id="mainNav">
-    <button class="nav-close" id="navClose" aria-label="Cerrar">&#x2715;</button>
+  <div class="rmenu-overlay" id="navOverlay"></div>
+  <nav class="rmenu" id="mainNav">
+    <button class="rmenu-close" id="navClose" aria-label="Cerrar">&#x2715;</button>
     <a href="works.html">trabajos</a>
     <a href="bonus.html">bonus tracks</a>
     <a href="clients.html">clientes</a>
@@ -65,11 +66,18 @@
     </div>
 
     <div class="work-nav">
-      <a href="works.html">← Todos los trabajos</a>
-      <a href="#">Siguiente →</a>
+      <a href="works.html">&#8592; Todos los trabajos</a>
+      <a href="#">Siguiente &#8594;</a>
     </div>
 
   </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>Buenos Aires, Argentina &mdash; <a href="mailto:hola@baur.com.ar">hola@baur.com.ar</a></p>
+    </div>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
