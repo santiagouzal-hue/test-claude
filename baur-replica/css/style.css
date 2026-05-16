@@ -105,8 +105,13 @@ a { color: var(--black); text-decoration: none; }
   display: block;
   width: 22px; height: 1px;
   background: var(--black);
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.35s var(--ease), opacity 0.25s;
 }
+
+/* Hamburger → × cuando el nav está abierto */
+.rmenu-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.rmenu-btn.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.rmenu-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
    MENÚ / RMENU

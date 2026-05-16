@@ -20,10 +20,12 @@
   function openNav() {
     if (mainNav)    mainNav.classList.add('is-open');
     if (navOverlay) navOverlay.classList.add('is-open');
+    if (menuBtn)    menuBtn.classList.add('is-open');
   }
   function closeNav() {
     if (mainNav)    mainNav.classList.remove('is-open');
     if (navOverlay) navOverlay.classList.remove('is-open');
+    if (menuBtn)    menuBtn.classList.remove('is-open');
   }
 
   if (menuBtn)    menuBtn.addEventListener('click', openNav);
