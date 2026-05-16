@@ -54,13 +54,14 @@ img { max-width: 100%; height: auto; display: block; }
 /* Hamburger .rmenu-btn */
 .rmenu-btn {
   position: fixed;
-  top: 50px; right: 50px;
-  z-index: 1031;
+  top: 44px; right: 44px;
+  z-index: 1022;     /* sobre el header (1020), debajo del overlay cuando nav está abierto */
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;     /* área de click más grande */
+  -webkit-tap-highlight-color: transparent;
 }
 .bars {
-  width: 24px; height: 1px;
+  width: 26px; height: 2px;
   background: var(--black);
   position: relative;
   display: block;
@@ -69,36 +70,37 @@ img { max-width: 100%; height: auto; display: block; }
 .bars::before, .bars::after {
   content: '';
   position: absolute;
-  left: 0; width: 100%; height: 1px;
+  left: 0; width: 100%; height: 2px;
   background: inherit;
 }
-.bars::before { top: -7px; }
-.bars::after { top: 7px; }
+.bars::before { top: -8px; }
+.bars::after  { top:  8px; }
 
 /* NAV OVERLAY + PANEL */
 .nav-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.5);
-  z-index: 1025;
+  z-index: 1030;   /* cubre el hamburger (1022) y el header (1020) cuando el nav está abierto */
   opacity: 0; pointer-events: none;
   transition: opacity 0.4s;
+  -webkit-tap-highlight-color: transparent;
 }
 .nav-overlay.is-open { opacity: 1; pointer-events: auto; }
 
 .main-menu {
   position: fixed;
-  top: 0; right: -440px; bottom: 0;
-  width: 100%; max-width: 400px;
+  top: 0; right: -420px; bottom: 0;
+  width: 90%; max-width: 400px;
   background: var(--black);
-  z-index: 1030;
+  z-index: 1035;   /* sobre el overlay (1030) */
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 70px 50px;
-  gap: 6px;
+  gap: 4px;
   transition: right 0.5s var(--ease);
+  -webkit-overflow-scrolling: touch;
 }
-.main-menu.none { /* clase del sitio original, no hace display:none */ }
 .main-menu.is-open { right: 0; }
 
 .main-menu a {
