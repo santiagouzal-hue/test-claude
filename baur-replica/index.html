@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,12 +25,12 @@
         </svg>
       </a>
       <div class="header-right">
-        <a href="en/index.html" class="content-lang">english</a>
+        <a href="#" class="content-lang">english</a>
       </div>
     </div>
   </header>
 
-  <!-- HAMBURGER (fixed, fuera del header para no moverse) -->
+  <!-- HAMBURGER -->
   <button class="rmenu-btn" id="menuBtn" aria-label="Abrir menú">
     <span></span><span></span><span></span>
   </button>
@@ -44,69 +45,72 @@
     <a href="contact.html">contacto</a>
   </nav>
 
-  <!-- FULLPAGE -->
-  <main class="fullpage" id="fullpage">
+  <!-- FULLPAGE SWIPER -->
+  <div class="swiper" id="fullpage">
+    <div class="swiper-wrapper">
 
-    <!-- 1 — Imagen -->
-    <section class="slide">
-      <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/06/overview-15.jpg')"></div>
-    </section>
-
-    <!-- 2 — Texto -->
-    <section class="slide">
-      <div>
-        <p class="hight">Somos un estudio especializado<br>en el desarrollo de comunicaciones<br>de alto rendimiento.</p>
+      <!-- 1 — Imagen -->
+      <div class="swiper-slide slide">
+        <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/06/overview-15.jpg')"></div>
       </div>
-    </section>
 
-    <!-- 3 — Imagen -->
-    <section class="slide">
-      <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/05/overview-14.jpg')"></div>
-    </section>
-
-    <!-- 4 — Texto -->
-    <section class="slide">
-      <div>
-        <p class="hight">Definimos estrategias,<br>generamos contenidos y diseñamos<br>en base a una filosofía muy simple:<br>hacer un gran trabajo.</p>
+      <!-- 2 — Texto -->
+      <div class="swiper-slide slide">
+        <div>
+          <p class="hight">Somos un estudio especializado<br>en el desarrollo de comunicaciones<br>de alto rendimiento.</p>
+        </div>
       </div>
-    </section>
 
-    <!-- 5 — Imagen -->
-    <section class="slide">
-      <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/04/overview-9.jpg')"></div>
-    </section>
-
-    <!-- 6 — Texto -->
-    <section class="slide">
-      <div>
-        <p class="hight">Trabajos que atraviesen el ruido,<br>despierten conversaciones<br>y ayuden a nuestros clientes<br>a contar su historia.</p>
+      <!-- 3 — Imagen -->
+      <div class="swiper-slide slide">
+        <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/05/overview-14.jpg')"></div>
       </div>
-    </section>
 
-    <!-- 7 — Imagen (header blanco) -->
-    <section class="slide header-white">
-      <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/05/overview-3.jpg')"></div>
-    </section>
-
-    <!-- 8 — Texto -->
-    <section class="slide">
-      <div>
-        <p class="hight">Branding / Comunicación interna /<br>Diseño editorial / Packaging /<br>Campañas / Websites /<br>Videos y más.</p>
+      <!-- 4 — Texto -->
+      <div class="swiper-slide slide">
+        <div>
+          <p class="hight">Definimos estrategias,<br>generamos contenidos y diseñamos<br>en base a una filosofía muy simple:<br>hacer un gran trabajo.</p>
+        </div>
       </div>
-    </section>
 
-    <!-- 9 — Imagen -->
-    <section class="slide">
-      <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/04/overview-11-2.jpg')"></div>
-    </section>
+      <!-- 5 — Imagen -->
+      <div class="swiper-slide slide">
+        <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/04/overview-9.jpg')"></div>
+      </div>
 
-  </main>
+      <!-- 6 — Texto -->
+      <div class="swiper-slide slide">
+        <div>
+          <p class="hight">Trabajos que atraviesen el ruido,<br>despierten conversaciones<br>y ayuden a nuestros clientes<br>a contar su historia.</p>
+        </div>
+      </div>
 
-  <!-- scrollbar lateral decorativo -->
-  <div class="swiper-scrollbar" id="scrollbar">
-    <div class="swiper-scrollbar-drag" id="scrollbarDrag"></div>
+      <!-- 7 — Imagen (header blanco) -->
+      <div class="swiper-slide slide header-white">
+        <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/05/overview-3.jpg')"></div>
+      </div>
+
+      <!-- 8 — Texto -->
+      <div class="swiper-slide slide">
+        <div>
+          <p class="hight">Branding / Comunicación interna /<br>Diseño editorial / Packaging /<br>Campañas / Websites /<br>Videos y más.</p>
+        </div>
+      </div>
+
+      <!-- 9 — Imagen -->
+      <div class="swiper-slide slide">
+        <div class="img-cover" style="background-image:url('https://baur.com.ar/files/2019/04/overview-11-2.jpg')"></div>
+      </div>
+
+    </div>
   </div>
 
+  <!-- scrollbar lateral -->
+  <div class="fp-scrollbar" id="fpScrollbar">
+    <div class="fp-scrollbar-drag" id="fpDrag"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

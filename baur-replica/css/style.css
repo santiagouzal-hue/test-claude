@@ -77,9 +77,9 @@ a { color: var(--black); text-decoration: none; }
 }
 
 /* header blanco — slides con fondo oscuro */
-.is-white .header_logo svg   { fill: var(--white); }
-.is-white .content-lang      { color: var(--white); }
-.is-white .rmenu-btn span     { background: var(--white); }
+.header.is-white .header_logo svg { fill: var(--white); }
+.header.is-white .content-lang    { color: var(--white); }
+.rmenu-btn.is-white span          { background: var(--white); }
 
 /* Idioma */
 .content-lang {
@@ -162,38 +162,37 @@ a { color: var(--black); text-decoration: none; }
 .rmenu-close:hover { color: var(--teal); }
 
 /* ============================================================
-   FULLPAGE — HOME
+   FULLPAGE — HOME (Swiper.js)
    ============================================================ */
 
-.fullpage {
+/* Swiper container ocupa toda la pantalla */
+.swiper#fullpage {
   height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.fullpage::-webkit-scrollbar { display: none; }
-
-/* scrollbar lateral (réplica de Swiper) */
-.swiper-scrollbar {
+  width: 100%;
   position: fixed;
-  right: 8px; top: 0; bottom: 0;
+  top: 0; left: 0;
+}
+
+/* Ocultar scrollbar nativo de Swiper */
+.swiper#fullpage .swiper-scrollbar { display: none; }
+
+/* scrollbar lateral propio */
+.fp-scrollbar {
+  position: fixed;
+  right: 6px; top: 0; bottom: 0;
   width: 2px;
   background: rgba(0,0,0,0.1);
   z-index: 900;
 }
-.swiper-scrollbar-drag {
+.fp-scrollbar-drag {
   width: 100%;
   background: var(--black);
-  transition: height 0.3s;
   border-radius: 2px;
+  transition: height 0.3s, margin-top 0.3s;
 }
 
 .slide {
   height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   position: relative;
   background: var(--white);
   overflow: hidden;
